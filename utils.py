@@ -290,48 +290,6 @@ def add_3D_geodesic_grid(ax: plt.Axes, manifold: geoopt.Stereographic, line_widt
             plot_geodesic(-zx_geodesic)
             plot_geodesic(-yz_geodesic)
             plot_geodesic(-zy_geodesic)
-            
-    """
-    # add geodesics per quadrant
-    for i in range(1, n_geodesics_per_quadrant):
-        for j in range(1, 2):
-            i = torch.as_tensor(float(i))
-            j = torch.as_tensor(float(j))
-            # determine start of geodesic on x/y/z-crosshair
-            dx = manifold.geodesic_unit(i*grid_interval_size, o, u_x)
-            dy = manifold.geodesic_unit(i*grid_interval_size, o, u_y)
-            dz = manifold.geodesic_unit(i*grid_interval_size, o, u_z)
-
-            # determine start of geodesic on xy/xz/yz-plane
-            dxy = manifold.geodesic_unit(j*grid_interval_size, dx, u_y)
-            dxz = manifold.geodesic_unit(j*grid_interval_size, dx, u_z)
-            dyx = manifold.geodesic_unit(j*grid_interval_size, dy, u_x)
-            dyz = manifold.geodesic_unit(j*grid_interval_size, dy, u_z)
-            dzx = manifold.geodesic_unit(j*grid_interval_size, dz, u_x)
-            dzy = manifold.geodesic_unit(j*grid_interval_size, dz, u_y)
-
-            # compute point on geodesics
-            xy_geodesic = manifold.geodesic_unit(t, dxy, u_z)
-            yx_geodesic = manifold.geodesic_unit(t, dyx, u_z)
-            xz_geodesic = manifold.geodesic_unit(t, dxz, u_y)
-            zx_geodesic = manifold.geodesic_unit(t, dzx, u_y)
-            yz_geodesic = manifold.geodesic_unit(t, dyz, u_x)
-            zy_geodesic = manifold.geodesic_unit(t, dzy, u_x)
-
-            # plot geodesics
-            plot_geodesic(xy_geodesic)
-            plot_geodesic(yx_geodesic)
-            plot_geodesic(xz_geodesic)
-            plot_geodesic(zx_geodesic)
-            plot_geodesic(yz_geodesic)
-            plot_geodesic(zy_geodesic)
-            if K < 0:
-                plot_geodesic(-xy_geodesic)
-                plot_geodesic(-yx_geodesic)
-                plot_geodesic(-xz_geodesic)
-                plot_geodesic(-zx_geodesic)
-                plot_geodesic(-yz_geodesic)
-                plot_geodesic(-zy_geodesic)"""
 
 
 def setup_plot_3D(manifold, lo=None, width=7, height=7, grid_line_width=0.3, with_background=True, latex = True):
