@@ -1,8 +1,5 @@
 import torch
 from geoopt.manifolds.stereographic import StereographicExact
-from geoopt.optim import RiemannianAdam
-from geoopt import ManifoldTensor
-from geoopt import ManifoldParameter
 import utils
 
 # MANIFOLD INSTANTIATION AND COMPUTATION OF MANIFOLD QUANTITIES ################ 

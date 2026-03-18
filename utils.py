@@ -2,7 +2,6 @@ import torch
 import geoopt
 import numpy as np
 import matplotlib.pyplot as plt
-import math
 import seaborn as sns
 from matplotlib import rcParams
 import imageio
