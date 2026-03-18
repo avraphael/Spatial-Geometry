@@ -326,7 +326,6 @@ def setup_plot_3D(manifold, lo=None, width=7, height=7, grid_line_width=0.3, wit
     ax.plot_surface(
         x, y, z,
         color=COLORS.BACKGROUND_BLUE,
-        alpha=0.4,
         edgecolor='none'
     )
     if K > 0:
