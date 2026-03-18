@@ -18,11 +18,12 @@ class COLORS:
     TEXT_COLOR = "#ffffff"
 
 
-def setup_plot(manifold, lo=None, width=7, height=7, grid_line_width=0.3, with_background=True):
+def setup_plot(manifold, lo=None, width=7, height=7, grid_line_width=0.3, with_background=True, latex = True):
 
     # define figure parameters
-    rcParams["text.latex.preamble"] = r"\usepackage{amsmath}"
-    rcParams["text.usetex"] = True
+    if latex:
+        rcParams["text.latex.preamble"] = r"\usepackage{amsmath}"
+        rcParams["text.usetex"] = True
     rcParams['figure.figsize'] = width, height
     sns.set_style("white")
 
@@ -333,11 +334,11 @@ def add_3D_geodesic_grid(ax: plt.Axes, manifold: geoopt.Stereographic, line_widt
                 plot_geodesic(-zy_geodesic)"""
 
 
-def setup_plot_3D(manifold, lo=None, width=7, height=7, grid_line_width=0.3, with_background=True):
-
+def setup_plot_3D(manifold, lo=None, width=7, height=7, grid_line_width=0.3, with_background=True, latex = True):
     # define figure parameters
-    rcParams["text.latex.preamble"] = r"\usepackage{amsmath}"
-    rcParams["text.usetex"] = True
+    if latex:
+        rcParams["text.latex.preamble"] = r"\usepackage{amsmath}"
+        rcParams["text.usetex"] = True
     rcParams['figure.figsize'] = width, height
     sns.set_style("white")
 
